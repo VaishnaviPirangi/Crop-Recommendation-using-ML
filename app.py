@@ -2,7 +2,7 @@ import pandas as pd
 import pickle as pkl
 import streamlit as st
 
-model=pkl.load(open(r"C:\Users\VAISHNAVI\OneDrive\Desktop\Crop Recommendation Project\Crop_recommendation.pkl","rb"))
+model=pkl.load(open("Crop_recommendation.pkl","rb"))
 
 st.header=('Crop Recommendation')
 data=pd.read_csv(r"C:\Users\VAISHNAVI\OneDrive\Desktop\Crop Recommendation Project\crop_dataset.csv")
@@ -22,3 +22,4 @@ if st.button("Recommend Crop"):
     output=model.predict(input)
     out_str='The recommended crop is '+str(output[0])
     st.success(out_str)
+
